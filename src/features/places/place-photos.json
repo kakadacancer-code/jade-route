@@ -1,0 +1,410 @@
+{
+  "mutianyu": {
+    "source": "https://commons.wikimedia.org/wiki/File:Great_Wall_of_China_July_2006.JPG",
+    "creator": "Velatrix",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "forbidden-city": {
+    "source": "https://commons.wikimedia.org/wiki/File:The_Forbidden_City_-_View_from_Coal_Hill.jpg",
+    "creator": "Pixelflake",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "temple-of-heaven": {
+    "source": "https://commons.wikimedia.org/wiki/File:Temple_of_Heaven_20160323_01.jpg",
+    "creator": "Shujianyang",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "summer-palace": {
+    "source": "https://commons.wikimedia.org/wiki/File:Longevity_Hill_of_the_Summer_Palace.jpg",
+    "creator": "xiquinhosilva",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "beijing-hutongs": {
+    "source": "https://commons.wikimedia.org/wiki/File:Beijing_hutong_area_3.jpg",
+    "creator": "Geoff McKim",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "chengde": {
+    "source": "https://commons.wikimedia.org/wiki/File:Chengde_Mountain_Resort_22944-Chengde_(44830038471).jpg",
+    "creator": "xiquinhosilva",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "pingyao": {
+    "source": "https://commons.wikimedia.org/wiki/File:Pingyao_Shilou_2013.08.25_07-01-33.jpg",
+    "creator": "Zhangzhugang",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "yungang": {
+    "source": "https://commons.wikimedia.org/wiki/File:61292-Yungang-Grottoes_(28498548881).jpg",
+    "creator": "xiquinhosilva",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "wutai": {
+    "source": "https://commons.wikimedia.org/wiki/File:Mount_Wutai.JPG",
+    "creator": "Zcm11",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "harbin-ice": {
+    "source": "https://commons.wikimedia.org/wiki/File:Harbin_Ice_Festival.jpg",
+    "creator": "Original uploader was LiYan at zh.wikipedia",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "changbai": {
+    "source": "https://commons.wikimedia.org/wiki/File:Laika_ac_Mt._Paekdu_(7998657081).jpg",
+    "creator": "Laika ac from USA",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "shenyang-palace": {
+    "source": "https://commons.wikimedia.org/wiki/File:Mukden_Palace_drone_view_5_(cropped_%26_rotated).jpg",
+    "creator": "Techyan",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "bund": {
+    "source": "https://commons.wikimedia.org/wiki/File:The_Bund_2.jpg",
+    "creator": "钉钉",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "yu-garden": {
+    "source": "https://commons.wikimedia.org/wiki/File:Shanghai_-_Yu_Garden_-_0035.jpg",
+    "creator": "Stefan Fussan",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "west-lake": {
+    "source": "https://commons.wikimedia.org/wiki/File:West_Lake,_Hangzhou_2025.jpg",
+    "creator": "Takashishin",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0"
+  },
+  "wuzhen": {
+    "source": "https://commons.wikimedia.org/wiki/File:1_wuzhen_aerial_2023.jpg",
+    "creator": "Chensiyuan",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "suzhou-gardens": {
+    "source": "https://commons.wikimedia.org/wiki/File:20240203_Lingering_Garden_09.jpg",
+    "creator": "Windmemories",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "sun-yat-sen-mausoleum": {
+    "source": "https://commons.wikimedia.org/wiki/File:Sun_Yat-sen_Mausoleum_-_54400198691.jpg",
+    "creator": "xiquinhosilva",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "huangshan": {
+    "source": "https://commons.wikimedia.org/wiki/File:Huangshan_pic_4.jpg",
+    "creator": "Chi King",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "hongcun-xidi": {
+    "source": "https://commons.wikimedia.org/wiki/File:Yixian_Hongcun_2016.09.09_17-27-03.jpg",
+    "creator": "Zhangzhugang",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "wuyuan": {
+    "source": "https://commons.wikimedia.org/wiki/File:Wuyuan_jiangling.jpg",
+    "creator": "YaPEX",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "fujian-tulou": {
+    "source": "https://commons.wikimedia.org/wiki/File:Three_round,_one_oval,_one_square_(16831811084).jpg",
+    "creator": "Scott Edmunds",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "wuyi": {
+    "source": "https://commons.wikimedia.org/wiki/File:Wuyi_Mountains_Sea_of_clouds_4.jpg",
+    "creator": "老过",
+    "license": "CC BY 2.5 cn",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5/cn/deed.en"
+  },
+  "gulangyu": {
+    "source": "https://commons.wikimedia.org/wiki/File:2018%E5%B9%B4%E7%9A%84%E9%BC%93%E6%B5%AA%E5%B1%BF.jpg",
+    "creator": "-森屿-",
+    "license": "CC BY 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5"
+  },
+  "mount-tai": {
+    "source": "https://commons.wikimedia.org/wiki/File:50304-Taishan_(49055660366).jpg",
+    "creator": "xiquinhosilva",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "qufu": {
+    "source": "https://commons.wikimedia.org/wiki/File:%E6%9B%B2%E9%98%9C%E5%AD%94%E5%BB%9F%E5%A4%A7%E6%88%90%E6%AE%BF.jpg",
+    "creator": "kanegen",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "qingdao": {
+    "source": "https://commons.wikimedia.org/wiki/File:Qingdao_Harbour_51341-Qingdao_(49055637186).jpg",
+    "creator": "xiquinhosilva",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "shaolin": {
+    "source": "https://commons.wikimedia.org/wiki/File:Shaolin_Temple_(10199450903).jpg",
+    "creator": "Gary Todd from Xinzheng, China",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "longmen": {
+    "source": "https://commons.wikimedia.org/wiki/File:27427-Luoyang_(49067744628).jpg",
+    "creator": "xiquinhosilva",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "yellow-crane": {
+    "source": "https://commons.wikimedia.org/wiki/File:CN_-_Hubei_-_Wuhan_-_Kranichpagode.jpg",
+    "creator": "MonsieurRoi",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "three-gorges": {
+    "source": "https://commons.wikimedia.org/wiki/File:Qutang_Gorge_on_Changjiang.jpg",
+    "creator": "Tan Wei Liang Byorn",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+  },
+  "zhangjiajie": {
+    "source": "https://commons.wikimedia.org/wiki/File:1_tianzishan_wulingyuan_zhangjiajie_2012.jpg",
+    "creator": "chensiyuan",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "fenghuang": {
+    "source": "https://commons.wikimedia.org/wiki/File:Fenghuang_hunan.jpg",
+    "creator": "Vera & Jean-Christophe",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0"
+  },
+  "li-river": {
+    "source": "https://commons.wikimedia.org/wiki/File:87318-Li-River.jpg",
+    "creator": "xiquinhosilva",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "longji": {
+    "source": "https://commons.wikimedia.org/wiki/File:LongshengRiceTerrace.jpg",
+    "creator": "severin.stalder",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "canton-tower": {
+    "source": "https://commons.wikimedia.org/wiki/File:Canton_Tower_20241027_(cropped).jpg",
+    "creator": "Tim Wu",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "kaiping": {
+    "source": "https://commons.wikimedia.org/wiki/File:Jinjiangli_0004.jpg",
+    "creator": "Stefan Fussan",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "yalong-bay": {
+    "source": "https://commons.wikimedia.org/wiki/File:Yalong_Bay_01.jpg",
+    "creator": "Anna Frodesiak",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "victoria-harbour": {
+    "source": "https://commons.wikimedia.org/wiki/File:Looking_Towards_Victoria_Harbour_from_Tsim_Sha_Tsui_Promenade.jpg",
+    "creator": "Asatsuyu2022",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "macau-centre": {
+    "source": "https://commons.wikimedia.org/wiki/File:Ru%C3%ADnas_de_S._Paulo.jpg",
+    "creator": "K.Y.K.Z.K.",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "panda-base": {
+    "source": "https://commons.wikimedia.org/wiki/File:Chengdu_Research_Base_Eingang.jpg",
+    "creator": "Kreisverkehrsampel",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "leshan": {
+    "source": "https://commons.wikimedia.org/wiki/File:36275-Leshan_(49067653383).jpg",
+    "creator": "xiquinhosilva",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "emei": {
+    "source": "https://commons.wikimedia.org/wiki/File:%E5%B3%A8%E7%9C%89%E5%B1%B1%E9%A3%8E%E6%99%AF%E5%8C%BA_Mount_Emei_Scenic_Area_07.jpg",
+    "creator": "George N",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "jiuzhaigou": {
+    "source": "https://commons.wikimedia.org/wiki/File:1_jiuzhaigou_valley_wu_hua_hai_2011b.jpg",
+    "creator": "Chensiyuan",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "qingcheng-dujiangyan": {
+    "source": "https://commons.wikimedia.org/wiki/File:Dujiang_Weir.jpg",
+    "creator": "星星",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "hongya-cave": {
+    "source": "https://commons.wikimedia.org/wiki/File:202308_Hongya_Cave_at_night_from_Qiansimen_Bridge.jpg",
+    "creator": "Jonashtand",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "dazu": {
+    "source": "https://commons.wikimedia.org/wiki/File:Dazu_2007_685_full_view.jpg",
+    "creator": "G41rn8",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "huangguoshu": {
+    "source": "https://commons.wikimedia.org/wiki/File:%E9%BB%84%E6%9E%9C%E6%A0%91%E7%80%91%E5%B8%83_2026-07-31_01.jpg",
+    "creator": "Kcx36",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "stone-forest": {
+    "source": "https://commons.wikimedia.org/wiki/File:Shilin,_Yunnan_24740.jpg",
+    "creator": "xiquinhosilva",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "dali-erhai": {
+    "source": "https://commons.wikimedia.org/wiki/File:Erhai_lake,_Yunnan,_China.jpg",
+    "creator": "Ariel Steiner ( Asteiner )",
+    "license": "CC BY 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5"
+  },
+  "lijiang": {
+    "source": "https://commons.wikimedia.org/wiki/File:Lijiang_-_panoramio_(6).jpg",
+    "creator": "Pavel Špindler",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+  },
+  "tiger-leaping-gorge": {
+    "source": "https://commons.wikimedia.org/wiki/File:%E8%99%8E%E8%B7%B3%E5%B3%A1.JPG",
+    "creator": "Gisling",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "yuanyang": {
+    "source": "https://commons.wikimedia.org/wiki/File:Terrace_field_yunnan_china_denoised.jpg",
+    "creator": "Jialiang Gao , www.peace-on-earth.org",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "shangri-la": {
+    "source": "https://commons.wikimedia.org/wiki/File:%E6%9D%BE%E8%B5%9E%E6%9E%97%E5%AF%BA_-_%E5%85%A8%E6%99%AF_-_2025-05-07_09_(cropped).jpg",
+    "creator": "瑞丽江的河水",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "potala": {
+    "source": "https://commons.wikimedia.org/wiki/File:Potala_Palace_HQ.jpg",
+    "creator": "Lhasa Government",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "namtso": {
+    "source": "https://commons.wikimedia.org/wiki/File:Namtso-and-holy-rock.jpg",
+    "creator": "Peter Vigier",
+    "license": "CC BY 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5"
+  },
+  "everest-tibet": {
+    "source": "https://commons.wikimedia.org/wiki/File:8,848m_Chomoranma_Rongbuk_Tibet_China_%E8%A5%BF%E8%97%8F_%E7%BB%92%E5%B8%83_%E7%8F%A0%E7%A9%86%E6%9C%97%E7%8E%9B%E5%B3%B0_-_panoramio_(4).jpg",
+    "creator": "Hiroki Ogawa",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0"
+  },
+  "terracotta-army": {
+    "source": "https://commons.wikimedia.org/wiki/File:51714-Terracota-Army.jpg",
+    "creator": "xiquinhosilva",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "xian-wall": {
+    "source": "https://commons.wikimedia.org/wiki/File:City_wall_of_Xi%27an_51550-Xian_(27959363326).jpg",
+    "creator": "xiquinhosilva",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  },
+  "mount-hua": {
+    "source": "https://commons.wikimedia.org/wiki/File:Hua_Shan.jpg",
+    "creator": "I, Ondřej Žváček",
+    "license": "CC BY 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.5"
+  },
+  "mogao": {
+    "source": "https://commons.wikimedia.org/wiki/File:Jiucenglou_of_Mogao_Caves.jpg",
+    "creator": "慕尼黑啤酒",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0"
+  },
+  "crescent-lake": {
+    "source": "https://commons.wikimedia.org/wiki/File:Crescent_Lake_from_the_Singing_Sand_Dunes_(20230918101214).jpg",
+    "creator": "N509FZ",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "jiayuguan": {
+    "source": "https://commons.wikimedia.org/wiki/File:Jiayu_Guan_2014.01.01_11-03-14.jpg",
+    "creator": "Zhangzhugang",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "zhangye-danxia": {
+    "source": "https://commons.wikimedia.org/wiki/File:Zhangye_National_Geopark_5.jpg",
+    "creator": "H2v5o68z",
+    "license": "CC0",
+    "licenseUrl": "http://creativecommons.org/publicdomain/zero/1.0/deed.en"
+  },
+  "qinghai-lake": {
+    "source": "https://commons.wikimedia.org/wiki/File:Qinghai_lake.jpg",
+    "creator": "NASA",
+    "license": "Public domain",
+    "licenseUrl": ""
+  },
+  "kanas": {
+    "source": "https://commons.wikimedia.org/wiki/File:Lake_Kanas.jpg",
+    "creator": "Wang Xiaozhe and Meng Jie Taken in Jul. 2005",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "http://creativecommons.org/licenses/by-sa/3.0/"
+  },
+  "kashgar": {
+    "source": "https://commons.wikimedia.org/wiki/File:H%C3%ABytgah_Mosque,_Kashi_(20230923100109).jpg",
+    "creator": "N509FZ",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0"
+  },
+  "hulunbuir": {
+    "source": "https://commons.wikimedia.org/wiki/File:Hulunbuir_Grasslands,_Inner_Mongolia.jpg",
+    "creator": "Sergio Tittarini",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0"
+  }
+}

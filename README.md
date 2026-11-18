@@ -1,38 +1,54 @@
 # Jade Routes
 
-A React and Vite travel frontend with an editorial jade palette, destination photography, and gentle scroll parallax. Browse seven sample journeys by category and open their day-by-day itineraries.
+A bilingual React and Vite travel planner for independent journeys through China. Browse eight sample routes, compare them by season and estimated budget, and build a printable trip plan.
 
-## Run on Ubuntu
+## Run locally
 
-With Node.js 18, 20, or 22+ and npm installed, open a terminal in the extracted `jade-routes` folder and run:
+Use Node.js 20 or newer.
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Open the localhost URL Vite prints, usually http://localhost:5173.
-
-## Production build
+## Build and test
 
 ```sh
+npm test
 npm run build
 npm run preview
 ```
 
-Vite writes the static site to `dist/`. This frontend runs without a backend or API keys. Destination photos load from Unsplash; the original SVG landscapes remain as fallbacks if images fail. Photo credits are linked in the footer. Parallax and reveal animations respect the reduced-motion setting.
+The production build is written to `dist/`. Configure static hosting to serve `index.html` for client-side routes such as `/journey/li-river` and `/plan/print`. The app displays its own 404 page for unknown routes.
 
-## Edit the project
+## Travel tools
 
-- `src/main.jsx` contains the page, filters, itinerary dialog, and motion hooks.
-- `src/tours.js` contains the example itineraries.
-- `src/Scene.jsx` contains destination photography and the layered SVG fallback artwork.
-- `src/styles.css` contains the responsive layout, transitions, parallax styling, and reduced-motion rules.
+- Search for English or Chinese destination names. Use travel month, group size, category, and duration filters, then sort by popularity, duration, or price.
+- Browse **All places** for 68 destinations. Search in either language and combine region, type, and UNESCO filters. Month suggestions are seasonal guidance. Directory photos are bundled as WebP files under `public/places/` with individual Wikimedia Commons credits.
+- Open a dedicated journey page for photos, suggested daily stops, and a sample budget breakdown. The **Quick preview** action opens a shorter dialog.
+- Use **Plan this trip** to prefill the planner. A saved plan includes departure and end dates, a countdown, and a group estimate. On the print page, select **Print / Save as PDF** and use your browser’s PDF destination if you want a file.
+- The browser stores favorites, a single trip plan, and language, theme, and layout preferences on the current device. The newsletter is a local demo and stores the email in the same browser.
 
-## Journey tools
+Prices, ratings, review counts, and testimonials are illustrative. Destination photographs load from Unsplash and link to their sources from the journey galleries. The landscape illustrations are used while loading and if a photo fails.
 
-Search by destination, landscape, or Chinese place name. Category filters and the saved-only view work together. Hearts save journeys in browser local storage, with an in-memory fallback when storage is blocked. Open “Refine collection” to search, show saved journeys, or enable the comparison checkboxes. Download a plain-text itinerary from its dialog. Favorites stay on the current device and browser.
+## Source layout
 
-The hero landscape selector previews three featured landscapes. A bilingual “中国热门目的地 / Popular places in China” section features six destinations, with Chinese landmark names and descriptions; every place opens its itinerary. The mobile menu supports Escape to close. FAQ answers use native expandable details. All added tools use the existing jade palette and responsive layouts.
+```text
+public/
+  favicon.svg
+  places/               Destination photos served directly by Vite
+src/
+  main.jsx              React entry point
+  app/                  Routes, shared state, and app context
+  components/           Site navigation and shared landscape rendering
+  features/
+    home/               Hero, search, collection, and homepage sections
+    journeys/           Journey cards, detail pages, data, and tests
+    places/             Destination directory, visit guides, photos, and tests
+    planner/            Trip planner and printable itinerary
+  i18n/                 English and Simplified Chinese interface copy
+  lib/                  Browser preference storage
+  styles/               Global theme, layout, and print styles
+```
 
-Run the search and storage checks with `npm test`.
+Keep feature-specific data, styles, and tests with their feature. Use `components/` and `lib/` for code shared across features.

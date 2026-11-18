@@ -71,26 +71,30 @@ function Illustration({ kind = 'river', fit = 'cover' }) {
 }
 
 export const photos = {
-  river: { credit: 'Zhimai Zhang', source: 'https://unsplash.com/photos/pBg2i0aUOec', id: '1557750223-53916b138a90', alt: 'The Li River winding between forest-covered karst mountains in Guilin' },
-  peaks: { credit: 'Jakub Tomasik', source: 'https://unsplash.com/photos/IUjIATAp2AA', id: '1740521532587-dd5938febf27', alt: 'Sunlit sandstone pillars and green forests in Zhangjiajie', position: '50% 45%' },
-  tea: { credit: 'Bluesea Tea', source: 'https://unsplash.com/photos/Av1C6l0KZbQ', id: '1767784821016-c7ae4951716f', alt: 'Rows of green Longjing tea terraces beneath the mountains in Hangzhou', position: '50% 60%' },
-  beijing: { id: '1668333140118-84e827fe42ca', alt: 'The Great Wall winding over green hills in China', credit: 'Jeremy Huang', source: 'https://unsplash.com/photos/eTcSiwZYA-k' },
-  shanghai: { id: '1538428494232-9c0d8a3ab403', alt: 'The Oriental Pearl Tower and Shanghai skyline across the Huangpu River', credit: 'Shanghai photograph', source: 'https://unsplash.com/photos/uKyzXEc2k_s' },
-  xian: { id: '1527922891260-918d42a4efc8', alt: 'Rows of Terracotta Army warriors near Xi’an', credit: 'Xi’an photograph', source: 'https://unsplash.com/photos/xZDWEEMS3sA' },
-  chengdu: { id: '1572295269175-f18627ae9c41', alt: 'A giant panda resting on a wooden platform in Chengdu', credit: 'billow926', source: 'https://unsplash.com/photos/HFgxFulbsF4' },
+  huangshan: { id: 'huangshan', file: 'places/huangshan.webp', alt: 'Granite peaks and forested ridges on Huangshan', altChinese: '黄山的花岗岩峰峦和林木覆盖的山脊' },
+  river: { credit: 'Zhimai Zhang', source: 'https://unsplash.com/photos/pBg2i0aUOec', id: '1557750223-53916b138a90', alt: 'The Li River winding between forest-covered karst mountains in Guilin', altChinese: '漓江蜿蜒穿过桂林林木覆盖的喀斯特群峰' },
+  peaks: { credit: 'Jakub Tomasik', source: 'https://unsplash.com/photos/IUjIATAp2AA', id: '1740521532587-dd5938febf27', alt: 'Sunlit sandstone pillars and green forests in Zhangjiajie', altChinese: '阳光下的张家界砂岩石柱与森林', position: '50% 45%' },
+  tea: { credit: 'Bluesea Tea', source: 'https://unsplash.com/photos/Av1C6l0KZbQ', id: '1767784821016-c7ae4951716f', alt: 'Rows of green Longjing tea terraces beneath the mountains in Hangzhou', altChinese: '杭州山脚下一排排翠绿的龙井茶园', position: '50% 60%' },
+  beijing: { id: '1668333140118-84e827fe42ca', alt: 'The Great Wall winding over green hills in China', altChinese: '万里长城蜿蜒穿过青山', credit: 'Jeremy Huang', source: 'https://unsplash.com/photos/eTcSiwZYA-k' },
+  shanghai: { id: '1538428494232-9c0d8a3ab403', alt: 'The Oriental Pearl Tower and Shanghai skyline across the Huangpu River', altChinese: '黄浦江对岸的东方明珠塔和上海天际线', credit: 'Shanghai photograph', source: 'https://unsplash.com/photos/uKyzXEc2k_s' },
+  xian: { id: '1527922891260-918d42a4efc8', alt: 'Rows of Terracotta Army warriors near Xi’an', altChinese: '西安附近排列整齐的兵马俑', credit: 'Xi’an photograph', source: 'https://unsplash.com/photos/xZDWEEMS3sA' },
+  chengdu: { id: '1572295269175-f18627ae9c41', alt: 'A giant panda resting on a wooden platform in Chengdu', altChinese: '成都一只在木平台上休息的大熊猫', credit: 'billow926', source: 'https://unsplash.com/photos/HFgxFulbsF4' },
 };
 
-export default function Scene({ kind = 'river', priority = false, fit = 'cover' }) {
-  const [failed, setFailed] = useState(false);
+export default function Scene({ kind = 'river', priority = false, fit = 'cover', language = 'en', photo: galleryPhoto, decorative = false, sizes }) {
+  const [status, setStatus] = useState('loading');
   const photo = photos[kind] || photos.river;
-  const imageUrl = width => `https://images.unsplash.com/photo-${photo.id}?auto=format&fit=crop&w=${width}&q=90`;
-  return <div className="scene landscape">
+  const image = galleryPhoto || photo;
+  const localFile = image.file && `${import.meta.env.BASE_URL}${image.file}`;
+  const id = image.id;
+  const imageUrl = width => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${width}&q=82`;
+  return <div className={`scene landscape image-${status}`}>
     <Illustration kind={kind} fit={fit} />
-    {!failed && <img src={imageUrl(priority ? 2560 : 1440)}
-      srcSet={[640, 960, 1440, 1920, 2560].map(width => `${imageUrl(width)} ${width}w`).join(', ')}
-      sizes={priority ? '100vw' : '(max-width: 600px) 100vw, 50vw'}
+    {status !== 'failed' && <img src={localFile || imageUrl(priority ? 2560 : 1440)}
+      srcSet={localFile ? undefined : [240, 360, 640, 960, 1440, 1920, 2560].map(width => `${imageUrl(width)} ${width}w`).join(', ')}
+      sizes={sizes ?? (priority ? '100vw' : '(max-width: 500px) 100vw, (max-width: 920px) 50vw, 33vw')}
       style={{ objectPosition: photo.position || '50% 50%' }}
-      alt={photo.alt} loading={priority ? 'eager' : 'lazy'} fetchPriority={priority ? 'high' : 'auto'}
-      decoding="async" onError={() => setFailed(true)} />}
+      alt={decorative ? '' : galleryPhoto && galleryPhoto.id !== photo.id ? (language === 'zh-Hans' ? '目的地风景' : 'Destination scenery') : language === 'zh-Hans' ? photo.altChinese : photo.alt} loading={priority ? 'eager' : 'lazy'} fetchPriority={priority ? 'high' : 'auto'}
+      decoding="async" onLoad={() => setStatus('loaded')} onError={() => setStatus('failed')} />}
   </div>;
 }
