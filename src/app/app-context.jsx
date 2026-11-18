@@ -1,19 +1,23 @@
 import { createContext, useContext } from 'react';
 import en from '../i18n/en.json';
+import km from '../i18n/km.json';
 import zh from '../i18n/zh.json';
+import journeyDetailsKm from '../features/journeys/journey-details-km.json';
 import journeyDetailsZh from '../features/journeys/journey-details-zh.json';
 import { localizeTour } from '../features/journeys/tour-translations.js';
 
 export const AppContext = createContext(null);
 export const useApp = () => useContext(AppContext);
+const messagesByLanguage = { en, km, 'zh-Hans': zh };
 
 export function localizer(language) {
-  const messages = language === 'zh-Hans' ? zh : en;
+  const messages = messagesByLanguage[language] ?? en;
   return (key, values = {}) => (messages[key] ?? en[key] ?? key).replace(/\{(\w+)\}/g, (_, name) => values[name] ?? '');
 }
 
 export function translatedTour(tour, language) {
-  if (language === 'en') return tour;
+  if (language === 'km') return { ...tour, ...journeyDetailsKm[tour.id] };
+  if (language !== 'zh-Hans') return tour;
   const [highlights, included, notIncluded] = journeyDetailsZh[tour.id];
   return { ...localizeTour(tour, language), highlights, included, notIncluded };
 }

@@ -166,7 +166,7 @@ function Collection({ filters, setFilters, savedOnly, setSavedOnly }) {
   const [sort, setSort] = useState('popular');
   const [compareMode, setCompareMode] = useState(false);
   const [compared, setCompared] = useState([]);
-  const matches = findJourneys(sourceTours, { ...filters, savedOnly, saved, sort })
+  const matches = findJourneys(sourceTours, { ...filters, savedOnly, saved, sort, localizedTours: tours })
     .map(result => tours.find(tour => tour.id === result.id));
   const active = [
     filters.query && [t('searchTerm', { query: filters.query }), { query: '' }],

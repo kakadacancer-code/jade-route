@@ -5,9 +5,8 @@ import { formatPrice, journeyPath, useApp } from '../../app/app-context.jsx';
 import { places, placeRegions } from '../places/places.js';
 import { placeVisits } from '../places/place-visits.js';
 import { destinationIds, destinationValue, resolveDestination } from './plan-destination.js';
+import PlanFields, { emptyPlan } from './PlanFields.jsx';
 import { Timeline } from '../journeys/JourneyPage.jsx';
-
-const blank = { tourId: '', placeId: '', date: '', travelers: '2', notes: '' };
 
 function localDay(date) {
   return Date.UTC(date.getFullYear(), date.getMonth(), date.getDate());
@@ -83,7 +82,7 @@ function VisitPlan({ place }) {
 
 export default function Planner({ requestedTour, requestedPlace }) {
   const { t, language, tours, savedPlan, savePlan, removeSavedPlan } = useApp();
-  const [draft, setDraft] = useState(() => ({ ...blank, ...savedPlan }));
+  const [draft, setDraft] = useState(() => ({ ...emptyPlan, ...savedPlan }));
   const [status, setStatus] = useState('');
   const saveButton = useRef(null);
   const { tour: journey } = resolveDestination(draft, tours);
@@ -135,9 +134,7 @@ export default function Planner({ requestedTour, requestedPlace }) {
             </optgroup>)}
           </select>
         </label>
-        <label>{t(draft.placeId ? 'visitDate' : 'departureDate')}<input name="date" type="date" required value={draft.date} onChange={update} /></label>
-        <label>{t('travelers')}<input name="travelers" type="number" min="1" max={journey?.groupSize ?? 99} required value={draft.travelers} onChange={update} /></label>
-        <label className="wide">{t('notesOptional')}<textarea name="notes" rows="4" maxLength="1000" value={draft.notes} onChange={update} placeholder={t('notesPlaceholder')} /></label>
+        <PlanFields draft={draft} maxTravelers={journey?.groupSize ?? 99} onChange={update} />
         <div className="planner-actions wide"><button ref={saveButton} className="button" type="submit">{t('savePlan')}</button><span role="status">{status && t(status)}</span></div>
       </form>
     </div>

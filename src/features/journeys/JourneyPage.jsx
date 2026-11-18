@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import Scene from '../../components/Scene.jsx';
 import placePhotos from '../places/place-photos.json';
 import { formatPrice, journeyPath, monthName, useApp } from '../../app/app-context.jsx';
+import PlanFields, { emptyPlan } from '../planner/PlanFields.jsx';
 import JourneyCard, { JourneyBadges } from './JourneyCard.jsx';
 
 export function Timeline({ tour }) {
@@ -50,6 +51,35 @@ function Inclusions({ tour }) {
   </div>;
 }
 
+function JourneyPlanForm({ tour }) {
+  const { t, savedPlan, savePlan } = useApp();
+  const [draft, setDraft] = useState(() => savedPlan?.tourId === tour.id && !savedPlan.placeId
+    ? { ...emptyPlan, ...savedPlan }
+    : { ...emptyPlan, tourId: tour.id });
+  const [status, setStatus] = useState('');
+
+  function update(event) {
+    const { name, value } = event.target;
+    setDraft(previous => ({ ...previous, [name]: value }));
+    setStatus('');
+  }
+
+  function save(event) {
+    event.preventDefault();
+    setStatus(savePlan(draft) ? 'planSaved' : 'planTemporary');
+  }
+
+  return <section id="journey-planner" className="journey-planner" aria-labelledby="journey-planner-title">
+    <h2 id="journey-planner-title">{t('plannerTitle')}</h2>
+    <form className="planner-form" onSubmit={save}>
+      <PlanFields draft={draft} maxTravelers={tour.groupSize} onChange={update} />
+      <button className="button wide" type="submit">{t('savePlan')}</button>
+      <div className="planner-actions wide" role="status">{status && t(status)}</div>
+      {status && <Link className="breadcrumb wide" to="/#planner">{t('planner')} ↗</Link>}
+    </form>
+  </section>;
+}
+
 function JourneyDetails({ tour }) {
   const { t, language, tours, saved, toggleSaved } = useApp();
   const isSaved = saved.includes(tour.id);
@@ -75,14 +105,20 @@ function JourneyDetails({ tour }) {
         <section><h2>{t('dayByDay')}</h2><Timeline tour={tour} /></section>
         <Inclusions tour={tour} />
       </div>
-      <aside className="booking-box" aria-label={t('planTrip')}>
-        <strong>{t('fromPrice', { price: formatPrice(tour.price, language) })}</strong>
-        <p>{t('planningEstimate')}</p>
-        <Link className="button" to={`/?plan=${tour.id}#planner`}>{t('planTrip')} ↗</Link>
-        <button className="button secondary" type="button" aria-pressed={isSaved} onClick={() => toggleSaved(tour.id)}>{isSaved ? t('removeSaved') : t('saveTrip')}</button>
+      <aside className="journey-sidebar" aria-label={t('planTrip')}>
+        <div className="booking-box">
+          <strong>{t('fromPrice', { price: formatPrice(tour.price, language) })}</strong>
+          <p>{t('planningEstimate')}</p>
+          <Link className="button" to="#journey-planner">{t('planTrip')} ↓</Link>
+          <button className="button secondary" type="button" aria-pressed={isSaved} onClick={() => toggleSaved(tour.id)}>{isSaved ? t('removeSaved') : t('saveTrip')}</button>
+        </div>
+        <JourneyPlanForm tour={tour} />
       </aside>
     </div>
-    <section className="section"><h2>{t('relatedJourneys')}</h2><div className="journey-grid">{related.map(item => <JourneyCard key={item.id} tour={item} />)}</div></section>
+    <section className="section journey-related">
+      <h2>{t('relatedJourneys')}</h2>
+      <div className="journey-grid">{related.map(item => <JourneyCard key={item.id} tour={item} />)}</div>
+    </section>
   </main>;
 }
 

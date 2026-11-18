@@ -20,6 +20,7 @@ function LanguageSelect() {
     <span className="sr-only">{t('language')}</span>
     <select value={language} onChange={event => setLanguage(event.target.value)}>
       <option value="en" lang="en">English</option><option value="zh-Hans" lang="zh-Hans">简体中文</option>
+      <option value="km" lang="km">ខ្មែរ</option>
     </select>
   </label>;
 }

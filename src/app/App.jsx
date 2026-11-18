@@ -23,7 +23,10 @@ function RouteEffects() {
 }
 
 export default function App() {
-  const [language, setLanguage] = useState(() => readPreference('language', 'en') === 'zh-Hans' ? 'zh-Hans' : 'en');
+  const [language, setLanguage] = useState(() => {
+    const preference = readPreference('language', 'en');
+    return ['en', 'zh-Hans', 'km'].includes(preference) ? preference : 'en';
+  });
   const [theme, setTheme] = useState(() => readPreference('theme', 'light') === 'dark' ? 'dark' : 'light');
   const [layout, setLayout] = useState(() => readPreference('layout', 'featured') === 'grid' ? 'grid' : 'featured');
   const [saved, setSaved] = useState(() => {

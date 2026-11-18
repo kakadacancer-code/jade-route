@@ -1,14 +1,16 @@
 import { chineseTours } from './tour-translations.js';
 
-export function findJourneys(tours, { category = 'All', query = '', savedOnly = false, saved = [], month = '', travelers = '', short = false, sort = '' } = {}) {
+export function findJourneys(tours, { category = 'All', query = '', savedOnly = false, saved = [], month = '', travelers = '', short = false, sort = '', localizedTours = [] } = {}) {
   const words = query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
   const matches = tours.filter(tour => {
     const translated = chineseTours[tour.id]?.slice(0, 3) ?? [];
+    const localized = localizedTours.find(item => item.id === tour.id);
     const { destination } = tour;
     const text = [
       tour.name, tour.region, tour.regionChinese, tour.type, tour.chinese, tour.description,
       destination?.name, destination?.chinese, destination?.attraction, destination?.attractionChinese,
       ...translated,
+      localized?.name, localized?.description,
     ]
       .join(' ').toLocaleLowerCase();
     return (category === 'All' || tour.type === category)
