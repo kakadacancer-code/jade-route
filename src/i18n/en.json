@@ -218,5 +218,7 @@
   "planThisVisit": "Plan this visit",
   "removeSavedPlan": "Remove saved trip",
   "planRemoved": "Saved trip removed.",
-  "planRemovedTemporary": "Trip removed for this visit. Browser storage could not be cleared."
+  "planRemovedTemporary": "Trip removed for this visit. Browser storage could not be cleared.",
+  "pauseHeroSlides": "Pause background slideshow",
+  "playHeroSlides": "Play background slideshow"
 }

@@ -13,7 +13,7 @@ const categories = ['All', 'Rivers', 'Mountains', 'Culture', 'Cities'];
 const months = Array.from({ length: 12 }, (_, index) => index + 1);
 const sortOptions = ['popular', 'duration', 'price'];
 
-function HeroPhoto({ featured, language }) {
+function HeroPhoto({ slides, activeIndex, language }) {
   const photo = useRef(null);
 
   useEffect(() => {
@@ -61,16 +61,45 @@ function HeroPhoto({ featured, language }) {
   }, []);
 
   return <div className="hero-photo" ref={photo}>
-    <Scene key={featured.id} kind={featured.id} language={language} priority decorative />
+    {slides.map((tour, index) => <div className="hero-slide" key={tour.id} data-active={activeIndex === index}>
+      <Scene kind={tour.id} language={language} priority={index === 0} sizes="100vw" decorative />
+    </div>)}
   </div>;
 }
 
 function Hero({ filters, apply }) {
   const { language, t, tours } = useApp();
   const [featuredIndex, setFeaturedIndex] = useState(0);
-  const featured = tours[featuredIndex];
-  return <section className="hero" id="top" aria-labelledby="hero-title">
-    <HeroPhoto featured={featured} language={language} />
+  const slides = tours.slice(0, 3);
+  const featured = slides[featuredIndex];
+  const hero = useRef(null);
+  const [visible, setVisible] = useState(true);
+  const [rotating, setRotating] = useState(() => !window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+  useEffect(() => {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const stop = event => { if (event.matches) setRotating(false); };
+    reduced.addEventListener('change', stop);
+    const observer = typeof IntersectionObserver === 'undefined' ? null
+      : new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting));
+    observer?.observe(hero.current);
+    return () => {
+      observer?.disconnect();
+      reduced.removeEventListener('change', stop);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!rotating || !visible || slides.length < 2) return;
+    const timer = setInterval(() => {
+      if (document.hidden) return;
+      setFeaturedIndex(index => (index + 1) % slides.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, [rotating, visible, slides.length]);
+
+  return <section className="hero" id="top" aria-labelledby="hero-title" ref={hero}>
+    <HeroPhoto slides={slides} activeIndex={featuredIndex} language={language} />
     <div className="wrap hero-content">
       <p className="label">{t('heroEyebrow')}</p>
       <h1 id="hero-title">{t('heroTitle')}<br /><em>{t('heroEmphasis')}</em></h1>
@@ -94,9 +123,13 @@ function Hero({ filters, apply }) {
         <button type="button" onClick={() => apply({ short: true })}>{t('underThree')}</button>
       </div>
       <div className="hero-feature">
-        <Link to={journeyPath(featured)}>{featured.region} <span aria-hidden="true">↗</span></Link>
+        <Link to={journeyPath(featured)} onFocus={() => setRotating(false)}>{featured.region} <span aria-hidden="true">↗</span></Link>
         <div className="hero-dots" role="group" aria-label={t('featuredLandscapes')}>
-          {tours.slice(0, 3).map((tour, index) => <button key={tour.id} type="button" aria-pressed={featuredIndex === index} aria-label={t('showJourney', { name: tour.name })} onClick={() => setFeaturedIndex(index)}>0{index + 1}</button>)}
+          <button type="button" aria-label={t(rotating ? 'pauseHeroSlides' : 'playHeroSlides')} onClick={() => setRotating(value => !value)}>
+            <span aria-hidden="true">{rotating ? 'Ⅱ' : '▶'}</span>
+          </button>
+          {slides.map((tour, index) => <button key={tour.id} type="button" aria-pressed={featuredIndex === index} aria-label={t('showJourney', { name: tour.name })}
+            onClick={() => { setFeaturedIndex(index); setRotating(false); }}>0{index + 1}</button>)}
         </div>
       </div>
     </div>

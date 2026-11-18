@@ -100,6 +100,8 @@ h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); }
   z-index: -2;
   transform: translate3d(0, calc(var(--hero-progress, 0) * var(--hero-travel)), 0);
 }
+.hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0s .85s; }
+.hero-slide[data-active="true"] { opacity: 1; z-index: 1; transition: opacity .85s ease; }
 .hero::after { content: ''; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, #10291fed 0%, #122a20a0 47%, #10261e26 100%), linear-gradient(0deg, #11291fc7, transparent 52%); }
 .hero-content { padding-block: calc(var(--header-height) + clamp(54px, 8vw, 115px)) 27px; }
 .hero .label { color: #f3dba6; }
@@ -310,6 +312,7 @@ dialog::backdrop { background: #10251f9f; backdrop-filter: blur(4px); }
 }
 @media (max-width: 750px) {
   .hero-photo { --hero-travel: 44px; }
+  .hero-feature { flex-wrap: wrap; }
   .reasons { grid-template-columns: 1fr; }
   :root {
     --header-height: 64px;

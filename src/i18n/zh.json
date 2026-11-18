@@ -218,5 +218,7 @@
   "planThisVisit": "规划游览",
   "removeSavedPlan": "移除已保存的行程",
   "planRemoved": "已移除保存的行程。",
-  "planRemovedTemporary": "本次访问已移除行程，但无法清除浏览器存储。"
+  "planRemovedTemporary": "本次访问已移除行程，但无法清除浏览器存储。",
+  "pauseHeroSlides": "暂停背景幻灯片",
+  "playHeroSlides": "播放背景幻灯片"
 }
