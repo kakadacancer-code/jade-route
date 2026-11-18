@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { tours as sourceTours } from '../features/journeys/tours.js';
 import { AppContext, localizer, translatedTour } from './app-context.jsx';
-import { readPreference, writePreference } from '../lib/preferences.js';
+import { readPreference, removePreference, writePreference } from '../lib/preferences.js';
 import { readSaved } from '../features/journeys/journeys.js';
 import Home from '../features/home/Home.jsx';
 import JourneyPage, { NotFound, QuickPreview } from '../features/journeys/JourneyPage.jsx';
@@ -65,10 +65,15 @@ export default function App() {
     return writePreference('plan', plan);
   }
 
+  function removeSavedPlan() {
+    setSavedPlan(null);
+    return removePreference('plan');
+  }
+
   const previewTour = tours.find(tour => tour.id === preview);
   const print = pathname === '/plan/print';
 
-  return <AppContext.Provider value={{ t, language, setLanguage, theme, setTheme, tours, saved, toggleSaved, openPreview, layout, setLayout, savedPlan, savePlan }}>
+  return <AppContext.Provider value={{ t, language, setLanguage, theme, setTheme, tours, saved, toggleSaved, openPreview, layout, setLayout, savedPlan, savePlan, removeSavedPlan }}>
     <RouteEffects />
     {!print && <Header />}
     <Routes>

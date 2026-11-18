@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { monthName, useApp } from '../../app/app-context.jsx';
 import { findPlaces, placeRegions, placeTypes } from './places.js';
 import { placeVisits } from './place-visits.js';
@@ -104,6 +105,7 @@ function VisitDetails({ place, trigger, onClose }) {
   >
     <div className="place-visit-content">
       <button className="icon-button dialog-close" type="button" onClick={onClose} aria-label={t('placeVisitClose')}>×</button>
+      <div className="place-visit-photo"><PlaceImage place={place} photo={placePhotos[place.id]} /></div>
       <p className="label">{t('placeVisitDetails')}</p>
       <h2 id="visit-place-title">{name}</h2>
       <p className="place-alternate" lang={chinese ? 'en' : 'zh-Hans'}>{chinese ? place.name : place.chineseName}</p>
@@ -116,7 +118,8 @@ function VisitDetails({ place, trigger, onClose }) {
         <div><dt>{t('placeVisitTip')}</dt><dd>{chinese ? chineseTip : tip}</dd></div>
       </dl>
       <div className="place-visit-actions">
-        <a className="button" href={map.href} target="_blank" rel="noreferrer">{t('placeVisitMap')} ↗</a>
+        <Link className="button" to={`/?place=${place.id}#planner`} onClick={onClose}>{t('planThisVisit')} ↗</Link>
+        <a className="button secondary" href={map.href} target="_blank" rel="noreferrer">{t('placeVisitMap')} ↗</a>
         {place.advice && <a className="place-advice" href={adviceLinks[place.advice]}>{t(place.advice)} ↗</a>}
       </div>
     </div>

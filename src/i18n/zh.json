@@ -137,7 +137,7 @@
   "shareLinkedIn": "分享到 LinkedIn",
   "shareEmail": "通过邮件分享",
   "plannerTitle": "规划你的旅程。",
-  "plannerCopy": "选择一条路线，在此浏览器保存一份旅行计划。",
+  "plannerCopy": "选择一条路线或任意景点，在此浏览器保存旅行计划。",
   "journey": "旅行路线",
   "chooseJourney": "选择旅行路线",
   "departureDate": "出发日期",
@@ -211,5 +211,12 @@
   "placesPagination": "景点分页",
   "placesPrevious": "上一页",
   "placesNext": "下一页",
-  "placesPage": "第 {page} 页"
+  "placesPage": "第 {page} 页",
+  "plannerDestination": "旅行路线或景点",
+  "choosePlanDestination": "选择路线或景点",
+  "visitDate": "游览日期",
+  "planThisVisit": "规划游览",
+  "removeSavedPlan": "移除已保存的行程",
+  "planRemoved": "已移除保存的行程。",
+  "planRemovedTemporary": "本次访问已移除行程，但无法清除浏览器存储。"
 }

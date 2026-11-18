@@ -77,7 +77,8 @@
 
 .place-visit-button { align-self: flex-start; margin-top: 12px; }
 :root[data-theme="dark"] .place-visit-button { background: #fff; color: var(--on-jade); }
-.place-visit-content { position: relative; padding: clamp(18px, 5vw, 34px); }
+.place-visit-content { --visit-padding: clamp(18px, 5vw, 34px); position: relative; padding: var(--visit-padding); }
+.place-visit-photo { display: none; }
 .place-visit-content > .label, .place-visit-content h2 { padding-right: 44px; }
 .place-visit-content h2 { margin-top: 5px; font-size: clamp(1.65rem, 5vw, 2.65rem); }
 .place-visit-facts { display: grid; gap: 12px; margin-block: 18px; }
@@ -87,3 +88,31 @@
 .place-visit-local-name { font-size: .87rem; }
 .place-visit-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 15px; }
 .place-visit-actions .place-advice { margin: 0; }
+
+@media (max-width: 750px) {
+  .place-visit-photo {
+    display: block;
+    margin: calc(-1 * var(--visit-padding)) calc(-1 * var(--visit-padding)) 16px;
+  }
+  .place-visit-photo .place-banner { max-height: 36dvh; }
+  .place-visit-content > .label, .place-visit-content h2 { padding-right: 0; }
+  .place-visit-content h2 { font-size: var(--mobile-heading); }
+  .places-search input, .place-description { font-size: var(--mobile-body); }
+  .places-search, .places-chips legend, .place-advice { font-size: var(--mobile-control); }
+  .place-badges span, .place-location, .place-months, .place-photo-credit { font-size: var(--mobile-caption); }
+  .places-grid { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .place-banner { min-height: 0; }
+  .place-banner span { padding: 8px; font-size: 1.15rem; }
+  .place-card-copy { padding: 10px; overflow-wrap: anywhere; }
+  .place-card h3 { font-size: var(--mobile-card-title); }
+  .place-card .place-alternate { font-size: var(--mobile-control); }
+  .place-badges { gap: 4px; }
+  .place-badges span { padding-inline: 5px; }
+  .place-visit-button {
+    width: 100%;
+    gap: 4px;
+    padding-inline: 6px;
+    text-align: center;
+    font-size: var(--mobile-control);
+  }
+}

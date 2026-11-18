@@ -210,7 +210,7 @@ h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); }
 .trip-facts dd { font-weight: 700; }
 .countdown { color: var(--jade); font-weight: 700; }
 .trip-notes { white-space: pre-wrap; overflow-wrap: anywhere; color: var(--muted); margin-top: 9px; }
-.plan-summary .button { margin-top: 14px; }
+.plan-summary-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
 .faq { display: grid; grid-template-columns: .8fr 1.2fr; gap: 28px; padding-top: 0; }
 .faq details { border-bottom: 1px solid var(--line); }
 .faq summary { cursor: pointer; padding-block: 14px; font-weight: 700; }
@@ -310,37 +310,71 @@ dialog::backdrop { background: #10251f9f; backdrop-filter: blur(4px); }
 }
 @media (max-width: 750px) {
   .hero-photo { --hero-travel: 44px; }
-  :root { --header-height: 64px; }
+  .reasons { grid-template-columns: 1fr; }
+  :root {
+    --header-height: 64px;
+    --mobile-title: clamp(2.25rem, 6vw, 3.5rem);
+    --mobile-heading: clamp(1.75rem, 4.5vw, 2.25rem);
+    --mobile-card-title: clamp(1.25rem, 3.5vw, 1.5rem);
+    --mobile-body: 1rem;
+    --mobile-control: .875rem;
+    --mobile-caption: .8125rem;
+  }
+  h1 { font-size: var(--mobile-title); }
+  h2, .journey-description h2 { font-size: var(--mobile-heading); }
+  h3, .compare-grid h4, .inclusions h2 { font-size: var(--mobile-card-title); }
+  .card-content > p:not(.label), .info-grid p, .footer-brand p { font-size: var(--mobile-body); }
+  .button, .chip, .quiet-button, .inline-link, .nav-links, .card-actions a,
+  .checkbox, .hero-search label, .planner-form label, .newsletter-inner label,
+  .quick-picks button, .hero-feature a, .result-row, .footer-grid li a {
+    font-size: var(--mobile-control);
+  }
+  .label, .photo-tag, .badges > span, .stats-inner > div > span, .hero-dots button,
+  .trip-facts dt, .newsletter-status, .sample-note, .footer-bottom p {
+    font-size: var(--mobile-caption);
+  }
+  .hero-search :is(input, select), .planner-form :is(input, select, textarea),
+  .collection-tools input, .newsletter-controls input { font-size: var(--mobile-body); }
   .wrap { width: calc(100% - 36px); }
-  .menu-toggle { display: inline-flex; }
-  .nav { justify-content: flex-start; gap: 8px; }
-  .nav-controls { margin-left: auto; }
+  .menu-toggle { display: inline-flex; order: 1; }
+  .nav :is(.menu-toggle, .nav-controls .icon-button, .language-select select) { border-color: transparent; }
+  .nav { justify-content: flex-start; gap: 2px; }
+  .nav-controls { margin-left: auto; gap: 2px; }
+  .nav :is(.menu-toggle, .nav-controls .icon-button) { width: 36px; height: 44px; }
+  .nav-controls select { height: 44px; padding: 0 2px; }
   .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--surface); color: var(--ink); padding: 8px 18px; box-shadow: var(--shadow); }
   .nav-links.open { display: grid; gap: 0; }
   .nav-links a + a { border-top: 1px solid var(--line); }
   .nav-saved { display: none; }
   body:has(.mobile-bar) { padding-bottom: calc(54px + env(safe-area-inset-bottom)); }
   .mobile-bar { position: fixed; z-index: 9; bottom: 0; left: 0; right: 0; display: grid; grid-template-columns: repeat(3, 1fr); padding-bottom: env(safe-area-inset-bottom); background: var(--surface); box-shadow: 0 -1px 0 var(--line); }
-  .mobile-bar a { display: grid; align-content: center; justify-items: center; height: 54px; color: var(--jade); font-size: .75rem; }
+  .mobile-bar a { display: grid; align-content: center; justify-items: center; height: 54px; color: var(--jade); font-size: var(--mobile-caption); }
   .mobile-bar a:hover { background: var(--tint); }
   .mobile-bar a span { font-size: 1.2rem; line-height: 1.05; }
   .back-top, .toast-container { bottom: calc(66px + env(safe-area-inset-bottom)); }
   .back-top { right: 12px; }
   .toast-container { left: 12px; }
+  .journey-grid { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  #journeys .featured-grid .journey-card:first-child { grid-column: auto; display: flex; }
+  #journeys .featured-grid .journey-card:first-child .card-photo { aspect-ratio: 1.62; min-height: 0; }
+  .journey-grid .card-content { padding: 12px; overflow-wrap: anywhere; }
+  .featured-grid .journey-card:first-child h3 { font-size: var(--mobile-card-title); }
+  .journey-grid .card-actions { margin-top: auto; }
+  .journey-grid .card-photo .photo-tag { top: 6px; left: 6px; padding-inline: 5px; }
+  .journey-grid .save-card { top: 6px; right: 6px; }
   .hero-search { grid-template-columns: 1fr 1fr; }
   .collection-tools { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .collection-tools .search-field { grid-column: 1 / -1; }
+  .collection-tools select { font-size: var(--mobile-control); line-height: 1.4; padding-inline: 8px; }
   .testimonial-inner, .planner-panel, .faq, .newsletter-inner, .journey-body { grid-template-columns: 1fr; }
   .testimonial-inner .section-heading { margin: 0; }
   .booking-box { position: static; grid-row: 1; }
 }
 @media (max-width: 500px) {
-  .nav { width: calc(100% - 24px); gap: 5px; }
+  .nav { width: calc(100% - 24px); }
   .nav .brand { font-size: 1.12rem; gap: 5px; }
   .nav .seal { width: 22px; height: 29px; }
-  .nav-controls { gap: 4px; }
-  .nav-controls select { padding-inline: 5px; }
-  .journey-grid, .steps, .plan-summary { grid-template-columns: 1fr; }
+  .steps, .plan-summary { grid-template-columns: 1fr; }
   .featured-grid .journey-card:first-child { grid-column: auto; display: flex; }
   .featured-grid .journey-card:first-child .card-photo { min-height: 0; aspect-ratio: 1.4; }
   .plan-photo { min-height: 0; aspect-ratio: 1.65; }
@@ -348,6 +382,9 @@ dialog::backdrop { background: #10251f9f; backdrop-filter: blur(4px); }
   .footer-brand { grid-column: 1 / -1; }
   .footer-bottom { align-items: start; flex-direction: column; }
   .inclusions { grid-template-columns: 1fr; }
+}
+@media (max-width: 360px) {
+  .collection-tools > label { grid-column: 1 / -1; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero-photo { inset: 0; }

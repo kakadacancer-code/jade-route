@@ -26,7 +26,7 @@ The production build is written to `dist/`. Configure static hosting to serve `i
 - Search for English or Chinese destination names. Use travel month, group size, category, and duration filters, then sort by popularity, duration, or price.
 - Browse **All places** for 68 destinations. Search in either language and combine region, type, and UNESCO filters. Month suggestions are seasonal guidance. Directory photos are bundled as WebP files under `public/places/` with individual Wikimedia Commons credits.
 - Open a dedicated journey page for photos, suggested daily stops, and a sample budget breakdown. The **Quick preview** action opens a shorter dialog.
-- Use **Plan this trip** to prefill the planner. A saved plan includes departure and end dates, a countdown, and a group estimate. On the print page, select **Print / Save as PDF** and use your browser’s PDF destination if you want a file.
+- Use **Plan this trip** from a journey or **Plan this visit** from a directory card’s details to prefill the planner. Journey plans include a date range and group estimate. Place plans use a single visit date and include practical visit details in the print view. On the print page, select **Print / Save as PDF** and use your browser’s PDF destination if you want a file.
 - The browser stores favorites, a single trip plan, and language, theme, and layout preferences on the current device. The newsletter is a local demo and stores the email in the same browser.
 
 Prices, ratings, review counts, and testimonials are illustrative. Destination photographs load from Unsplash and link to their sources from the journey galleries. The landscape illustrations are used while loading and if a photo fails.

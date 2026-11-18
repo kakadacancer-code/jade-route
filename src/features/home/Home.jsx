@@ -206,7 +206,7 @@ export default function Home() {
     <Collection filters={filters} setFilters={setFilters} savedOnly={savedOnly} setSavedOnly={setSavedOnly} />
     <HomeSections />
     <Places />
-    <Planner requestedTour={planId} />
+    <Planner requestedTour={planId} requestedPlace={params.get('place')} />
     <section className="wrap section faq" id="questions" aria-labelledby="questions-title">
       <div className="section-heading"><p className="label">{t('support')}</p><h2 id="questions-title">{t('faqTitle')}</h2></div>
       <div>{[1, 2, 3, 4].map(number => <details key={number}><summary>{t(`question${number}`)}</summary><p>{t(`answer${number}`)}</p></details>)}</div>

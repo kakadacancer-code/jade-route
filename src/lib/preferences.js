@@ -14,3 +14,12 @@ export function writePreference(key, value) {
     return false;
   }
 }
+
+export function removePreference(key) {
+  try {
+    localStorage.removeItem(`jade-routes:${key}`);
+    return true;
+  } catch {
+    return false;
+  }
+}

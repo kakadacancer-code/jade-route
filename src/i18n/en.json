@@ -137,7 +137,7 @@
   "shareLinkedIn": "Share on LinkedIn",
   "shareEmail": "Share by email",
   "plannerTitle": "Make it your own.",
-  "plannerCopy": "Choose a journey and keep one trip plan in this browser.",
+  "plannerCopy": "Choose a journey or any place in the directory and save a plan in this browser.",
   "journey": "Journey",
   "chooseJourney": "Choose a journey",
   "departureDate": "Departure date",
@@ -211,5 +211,12 @@
   "placesPagination": "Destination pages",
   "placesPrevious": "Previous",
   "placesNext": "Next",
-  "placesPage": "Page {page}"
+  "placesPage": "Page {page}",
+  "plannerDestination": "Journey or place",
+  "choosePlanDestination": "Choose a journey or place",
+  "visitDate": "Visit date",
+  "planThisVisit": "Plan this visit",
+  "removeSavedPlan": "Remove saved trip",
+  "planRemoved": "Saved trip removed.",
+  "planRemovedTemporary": "Trip removed for this visit. Browser storage could not be cleared."
 }
