@@ -129,7 +129,7 @@ export function Footer() {
         <div className="social-links" aria-label={t('share')}>
           <a className="icon-button" href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`} target="_blank" rel="noreferrer" aria-label={t('shareFacebook')}>f</a>
           <a className="icon-button" href={`https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`} target="_blank" rel="noreferrer" aria-label={t('shareLinkedIn')}>in</a>
-          <a className="icon-button" href={`mailto:?subject=Jade%20Routes&body=${shareUrl}`} aria-label={t('shareEmail')}>✉</a>
+          <a className="icon-button" href="mailto:kakadacancer@gmail.com" aria-label={t('contactEmail')}>✉</a>
         </div>
       </div>
     </div></footer>
